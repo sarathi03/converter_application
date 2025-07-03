@@ -1,2 +1,2 @@
-# converter_application
-WPF Application for Modbus RTU to TCP/IP  
+# Converter Application
+WPF Application for Modbus RTU to TCP/IP converter configuration  
