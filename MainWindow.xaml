@@ -1,12 +1,659 @@
 ﻿<Window x:Class="convertor_application.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:convertor_application"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
-    <Grid>
+        Title="Configuration App" Height="800" Width="1400" WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
 
+    <!-- ============================================ -->
+    <!-- STYLE PANELS (Window.Resources)             -->
+    <!-- ============================================ -->
+    <Window.Resources>
+        <!-- Modern Button Style -->
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#4A90E2"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="6" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#357ABD"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#2E6DA4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Small Button Style -->
+        <Style x:Key="SmallButton" TargetType="Button">
+            <Setter Property="Background" Value="#4A90E2"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="4" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#357ABD"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#2E6DA4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Filter Button Style -->
+        <Style x:Key="FilterButton" TargetType="Button">
+            <Setter Property="Background" Value="#6C757D"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="6" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#5A6268"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#495057"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Copy/Paste Button Style -->
+        <Style x:Key="CopyPasteButton" TargetType="Button">
+            <Setter Property="Background" Value="#28A745"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="4" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#218838"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1E7E34"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Connection Status Indicator -->
+        <Style x:Key="StatusIndicator" TargetType="Ellipse">
+            <Setter Property="Width" Value="12"/>
+            <Setter Property="Height" Value="12"/>
+            <Setter Property="Fill" Value="Red"/>
+            <Setter Property="Stroke" Value="White"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+
+        <!-- Modern TextBox Style with Placeholder -->
+        <Style x:Key="ModernTextBox" TargetType="TextBox">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" 
+                                              Padding="{TemplateBinding Padding}"/>
+                                <TextBlock x:Name="PlaceholderText" 
+                                           Text="{TemplateBinding Tag}"
+                                           Foreground="#999999"
+                                           Padding="{TemplateBinding Padding}"
+                                           IsHitTestVisible="False"
+                                           Visibility="Collapsed"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#4A90E2"/>
+                            </Trigger>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Modern ComboBox Style -->
+        <Style x:Key="ModernComboBox" TargetType="ComboBox">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- Modern PasswordBox Style -->
+        <Style x:Key="ModernPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                          Padding="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#4A90E2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Close Button Style -->
+        <Style x:Key="CloseButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF5252"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF1744"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Minimize Button Style -->
+        <Style x:Key="MinimizeButton" TargetType="Button">
+            <Setter Property="Background" Value="#FFA726"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF8F00"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- CheckBox Style -->
+        <Style x:Key="ModernCheckBox" TargetType="CheckBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTAINER - SINGLE GRID               -->
+    <!-- ============================================ -->
+    <Grid>
+        <!-- ============================================ -->
+        <!-- LOGIN CONTENT                               -->
+        <!-- ============================================ -->
+        <Grid x:Name="LoginPanel" Visibility="Visible" KeyDown="LoginPanel_KeyDown">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#357ABD" Offset="0"/>
+                    <GradientStop Color="#F4F9FD" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Main Login Form -->
+            <Border x:Name="MainLoginForm" Width="600" Height="450" Background="White" CornerRadius="10"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Opacity="0.2" BlurRadius="20" ShadowDepth="5"/>
+                </Border.Effect>
+
+                <StackPanel Margin="40" VerticalAlignment="Center">
+                    <!-- MachDatum Logo -->
+                    <Image Source="/converter_application;component/Images/MachDatum.png"
+                     Width="200"
+                     Height="120"
+                     Margin="0,-20,0,0"
+                     HorizontalAlignment="Center"
+                     Stretch="Uniform"/>
+
+                    <TextBlock Text="Configuration App" 
+                               FontSize="24" FontWeight="Bold" 
+                               Foreground="#2E3B4E" 
+                               HorizontalAlignment="Center" 
+                               Margin="0,0,0,0"/>
+
+                    <TextBlock Text="Username:" FontSize="14" Margin="60,10,0,5"/>
+                    <TextBox x:Name="UsernameTextBox" Style="{StaticResource ModernTextBox}" 
+                             Text="admin" Margin="60,0,60,0"/>
+
+                    <TextBlock Text="Password:" FontSize="14" Margin="60,10,0,5"/>
+                    <PasswordBox x:Name="PasswordBox" Style="{StaticResource ModernPasswordBox}" 
+                                 Margin="60,0,60,25"/>
+
+                    <Button Content="Login" Style="{StaticResource ModernButton}" 
+                            Width="120" Height="40" 
+                            Click="Login_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- ============================================ -->
+        <!-- MAIN APP CONTENT                            -->
+        <!-- ============================================ -->
+        <Grid x:Name="MainPanel" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Menu Bar -->
+            <Menu Grid.Row="0" Background="#2E3B4E" Height="40">
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <DockPanel HorizontalAlignment="Stretch"/>
+                    </ItemsPanelTemplate>
+                </Menu.ItemsPanel>
+
+                <MenuItem Header="Home" Foreground="White" FontSize="14" Click="Home_Click">
+                    <MenuItem Header="🌐 Device Discovery" Foreground="Black" Click="DeviceDiscovery_Click"/>
+                    <MenuItem Header="📡 IP Configuration" Foreground="Black" Click="IpConfig_Click"/>
+                    <MenuItem Header="⚙️ RS485 Configuration" Foreground="Black" Click="Rs485Config_Click"/>
+                    <MenuItem Header="🔍 Search Device" Foreground="Black" Click="SearchDevice_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Support" Foreground="White" FontSize="14">
+                    <MenuItem Header="🌐 Website" Foreground="Black" Click="OpenWebsite_Click"/>
+                    <MenuItem Header="📧 Email Support" Foreground="Black" Click="EmailSupport_Click"/>
+                    <MenuItem Header="📞 Contact" Foreground="Black" Click="ContactSupport_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Docs" Foreground="White" FontSize="14">
+                    <MenuItem Header="📋 Physical Configuration" Foreground="Black" Click="PhysicalConfig_Click"/>
+                    <MenuItem Header="⚙️ Configuration Menu" Foreground="Black" Click="ConfigMenu_Click"/>
+                    <MenuItem Header="🔧 App Features" Foreground="Black" Click="AppFeatures_Click"/>
+                    <MenuItem Header="🔍 Troubleshoots" Foreground="Black" Click="Troubleshoots_Click"/>
+                    <MenuItem Header="📦 Product Link" Foreground="Black" Click="ProductLink_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="👤 User" Foreground="White" FontSize="14" HorizontalAlignment="Right">
+                    <MenuItem Header="Logout" Foreground="Black" Click="Logout_Click"/>
+                </MenuItem>
+            </Menu>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Row="1" Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Content Panels Container -->
+                <Grid Grid.Row="0">
+                    <!-- ============================================ -->
+                    <!-- DEVICE DISCOVERY PANEL                     -->
+                    <!-- ============================================ -->
+                    <ScrollViewer x:Name="DeviceDiscoveryPanel" Visibility="Visible" 
+                                  VerticalScrollBarVisibility="Auto">
+                        <Border Background="White" CornerRadius="10" Padding="30">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" Opacity="0.1" BlurRadius="10" ShadowDepth="2"/>
+                            </Border.Effect>
+
+                            <StackPanel>
+                                <TextBlock Text="Device Discovery &amp; Management" 
+                                           FontSize="24" FontWeight="Bold" 
+                                           Foreground="#2E3B4E" Margin="0,0,0,20"/>
+
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="Network Range:" FontSize="14" 
+                                               VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="NetworkRangeTextBox" Grid.Column="1"
+                                             Style="{StaticResource ModernTextBox}" 
+                                             Text="192.168.1.0/24"/>
+
+                                    <Button Grid.Column="2" Content="🔍 Scan Network" 
+                                            Style="{StaticResource ModernButton}" 
+                                            Width="150" Height="40" 
+                                            Margin="15,0,0,0"
+                                            Click="ScanNetwork_Click"/>
+                                </Grid>
+
+                                <!-- Search and Filter Section -->
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="Search Device:" FontSize="14" 
+                                               VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="SearchDeviceTextBox" Grid.Column="1"
+                                             Style="{StaticResource ModernTextBox}" 
+                                             Tag="Enter device name or IP..."/>
+
+                                    <Button Grid.Column="2" Content="🔍 Search" 
+                                            Style="{StaticResource ModernButton}" 
+                                            Width="100" Height="40" 
+                                            Margin="15,0,0,0"
+                                            Click="SearchDeviceButton_Click"/>
+
+                                    <Button Grid.Column="3" Content="⚙️ Filter" 
+                                            Style="{StaticResource FilterButton}" 
+                                            Width="100" Height="40" 
+                                            Margin="10,0,0,0"
+                                            Click="ShowFilterOptions_Click"/>
+                                </Grid>
+
+                                <!-- Filter Options Popup -->
+                                <Border x:Name="FilterOptionsPopup" Background="White" CornerRadius="5" 
+                                        Visibility="Collapsed" Margin="0,0,0,20" Padding="15"
+                                        BorderBrush="#CCCCCC" BorderThickness="1">
+                                    <StackPanel>
+                                        <TextBlock Text="Filter Options" FontSize="16" FontWeight="Bold" 
+                                                   Margin="0,0,0,10"/>
+
+                                        <!-- Sort Options -->
+                                        <GroupBox Header="Sort By" Margin="0,0,0,10">
+                                            <StackPanel>
+                                                <RadioButton x:Name="SortAlphabetRadio" Content="Alphabetical (A-Z)" 
+                                                             IsChecked="True" Margin="5,2"/>
+                                                <RadioButton x:Name="SortAlphabetReverseRadio" Content="Alphabetical (Z-A)" 
+                                                             Margin="5,2"/>
+                                                <RadioButton x:Name="SortLocationRadio" Content="Location" Margin="5,2"/>
+                                            </StackPanel>
+                                        </GroupBox>
+
+                                        <!-- Status Filter -->
+                                        <GroupBox Header="Device Status" Margin="0,0,0,10">
+                                            <StackPanel>
+                                                <CheckBox x:Name="ShowConnectedCheckBox" Content="Connected" 
+                                                          IsChecked="True" Margin="5,2"/>
+                                                <CheckBox x:Name="ShowDisconnectedCheckBox" Content="Not Connected" 
+                                                          IsChecked="True" Margin="5,2"/>
+                                                <CheckBox x:Name="ShowOfflineCheckBox" Content="Offline" 
+                                                          IsChecked="True" Margin="5,2"/>
+                                            </StackPanel>
+                                        </GroupBox>
+
+                                        <!-- Group By Location -->
+                                        <GroupBox Header="Group Options" Margin="0,0,0,10">
+                                            <CheckBox x:Name="GroupByLocationCheckBox" Content="Group by Location" 
+                                                      Margin="5,2"/>
+                                        </GroupBox>
+
+                                        <Button Content="Apply Filter" Style="{StaticResource SmallButton}" 
+                                                Width="100" Height="30" />
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Device List -->
+                                <TextBlock Text="Discovered Devices:" FontSize="16" FontWeight="SemiBold" 
+                                           Margin="0,0,0,15"/>
+
+                                <DataGrid x:Name="DeviceListGrid" Height="400" 
+                                          AutoGenerateColumns="False" 
+                                          CanUserAddRows="False"
+                                          HeadersVisibility="Column"
+                                          GridLinesVisibility="Horizontal"
+                                          MouseDoubleClick="DeviceListGrid_MouseDoubleClick">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="Status" Width="80">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <Ellipse Width="12" Height="12" 
+                                                                 Fill="{Binding StatusColor}" 
+                                                                 Stroke="White" StrokeThickness="2"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="IP Address" Binding="{Binding IpAddress}" Width="150"/>
+                                        <DataGridTextColumn Header="Port" Binding="{Binding Port}" Width="80"/>
+                                        <DataGridTextColumn Header="Device Name | Location" Binding="{Binding DeviceNameWithLocation}" Width="250"/>
+                                        <DataGridTemplateColumn Header="Actions" Width="250">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Content="Connect" 
+                                                                Style="{StaticResource SmallButton}" 
+                                                                Width="60" Height="25" 
+                                                                FontSize="10" Padding="5,2"
+                                                                Click="ConnectDevice_Click"
+                                                                Tag="{Binding}"/>
+                                                        <Button Content="Ping" 
+                                                                Background="#4CAF50" 
+                                                                Style="{StaticResource SmallButton}" 
+                                                                Width="50" Height="25" 
+                                                                FontSize="10" Padding="5,2"
+                                                                Margin="5,0,0,0"
+                                                                Click="PingDevice_Click"
+                                                                Tag="{Binding}"/>
+                                                        <Button Content="Rename" 
+                                                                Background="#FF9500" 
+                                                                Style="{StaticResource SmallButton}" 
+                                                                Width="60" Height="25" 
+                                                                FontSize="10" Padding="5,2"
+                                                                Margin="5,0,0,0"
+                                                                Click="RenameDevice_Click"
+                                                                Tag="{Binding}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </Border>
+                    </ScrollViewer>
+
+                    <!-- ============================================ -->
+                    <!-- SEARCH DEVICE PANEL                        -->
+                    <!-- ============================================ -->
+                    <ScrollViewer x:Name="SearchDevicePanel" Visibility="Collapsed" 
+                                  VerticalScrollBarVisibility="Auto">
+                        <Border Background="White" CornerRadius="10" Padding="30">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" Opacity="0.1" BlurRadius="10" ShadowDepth="2"/>
+                            </Border.Effect>
+
+                            <StackPanel>
+                                <TextBlock Text="Search Device" 
+                                           FontSize="24" FontWeight="Bold" 
+                                           Foreground="#2E3B4E" Margin="0,0,0,20"/>
+
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="300"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="Search Query:" FontSize="14" 
+                                               VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBox x:Name="SearchQueryTextBox" Grid.Column="1"
+                                             Style="{StaticResource ModernTextBox}" 
+                                             Tag="Enter device name, IP, or MAC address..."/>
+
+                                    <Button Grid.Column="2" Content="🔍 Search" 
+                                            Style="{StaticResource ModernButton}" 
+                                            Width="120" Height="40" 
+                                            Margin="15,0,0,0"
+                                            Click="PerformDeviceSearch_Click"/>
+                                </Grid>
+
+                                <!-- Search Results -->
+                                <TextBlock Text="Search Results:" FontSize="16" FontWeight="SemiBold" 
+                                           Margin="0,0,0,15"/>
+
+                                <DataGrid x:Name="SearchResultsGrid" Height="400" 
+                                          AutoGenerateColumns="False" 
+                                          CanUserAddRows="False"
+                                          HeadersVisibility="Column"
+                                          GridLinesVisibility="Horizontal"
+                                          MouseDoubleClick="SearchResultsGrid_MouseDoubleClick">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="Status" Width="80">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <Ellipse Width="12" Height="12" 
+                                                                 Fill="{Binding StatusColor}" 
+                                                                 Stroke="White" StrokeThickness="2"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="IP Address" Binding="{Binding IpAddress}" Width="150"/>
+                                        <DataGridTextColumn Header="Port" Binding="{Binding Port}" Width="80"/>
+                                        <DataGridTextColumn Header="Device Name | Location" Binding="{Binding DeviceNameWithLocation}" Width="250"/>
+                                        <DataGridTemplateColumn Header="Actions" Width="250">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Content="Connect" 
+                                                                Style="{StaticResource SmallButton}" 
+                                                                Width="60" Height="25" 
+                                                                FontSize="10" Padding="5,2"
+                                                                Click="ConnectDevice_Click"
+                                                                Tag="{Binding}"/>
+                                                        <Button Content="Ping" 
+                                                                Background="#4CAF50" 
+                                                                Style="{StaticResource SmallButton}" 
+                                                                Width="50" Height="25" 
+                                                                FontSize="10" Padding="5,2"
+                                                                Margin="5,0,0,0"
+                                                                Click="PingDevice_Click"
+                                                                Tag="{Binding}"/>
+                                                        <Button Content="Configure" 
+                                                                Background="#9C27B0" 
+                                                                Style="{StaticResource SmallButton}" 
+                                                                Width="70" Height="25" 
+                                                                FontSize="10" Padding="5,2"
+                                                                Margin="5,0,0,0"
+                                                                Click="ConfigureDevice_Click"
+                                                                Tag="{Binding}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+
+            <!-- Configuration Tabs Container -->
+            <Grid x:Name="ConfigTabsContainer" Grid.Row="1" Visibility="Collapsed">
+                <!-- This will contain the configuration popup tabs -->
+            </Grid>
+        </Grid>
     </Grid>
-</Window>
+    </Window>

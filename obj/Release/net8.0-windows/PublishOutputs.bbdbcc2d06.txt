@@ -1,0 +1,6 @@
+C:\Users\sarat\Visual Studio\convertor_application\bin\Release\net8.0-windows\publish\converter_application.exe
+C:\Users\sarat\Visual Studio\convertor_application\bin\Release\net8.0-windows\publish\converter_application.dll
+C:\Users\sarat\Visual Studio\convertor_application\bin\Release\net8.0-windows\publish\converter_application.deps.json
+C:\Users\sarat\Visual Studio\convertor_application\bin\Release\net8.0-windows\publish\converter_application.runtimeconfig.json
+C:\Users\sarat\Visual Studio\convertor_application\bin\Release\net8.0-windows\publish\converter_application.pdb
+C:\Users\sarat\Visual Studio\convertor_application\bin\Release\net8.0-windows\publish\Newtonsoft.Json.dll

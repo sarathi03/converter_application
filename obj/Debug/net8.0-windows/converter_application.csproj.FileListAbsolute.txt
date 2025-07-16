@@ -6,7 +6,6 @@ C:\Users\sarat\Visual Studio\convertor_application\bin\Debug\net8.0-windows\conv
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application_MarkupCompile.cache
-C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application_MarkupCompile.lref
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application.g.resources
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application.GeneratedMSBuildEditorConfig.editorconfig
@@ -18,3 +17,7 @@ C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\refi
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application.pdb
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application.genruntimeconfig.cache
 C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\ref\converter_application.dll
+C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application.sourcelink.json
+C:\Users\sarat\Visual Studio\convertor_application\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converter_application.csproj.AssemblyReference.cache
+C:\Users\sarat\Visual Studio\convertor_application\obj\Debug\net8.0-windows\converte.12259903.Up2Date

@@ -3,20 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\converter_application.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:converter_application.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|convertor_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|convertor_application.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|convertor_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|convertor_application.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\mainwindow.xaml||{8D42AE58-4628-4780-AC3C-6B7E6DE7A92A}|",
-      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:mainwindow.xaml||{8D42AE58-4628-4780-AC3C-6B7E6DE7A92A}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sarat\\AppData\\Local\\Temp\\.vsdbgsrc\\1b77cb146b3dc6f60ca3b7de619b68fc3904b4f03155b255fa425d7d7bd36ae9\\PropertyPathWorker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\inputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:inputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|c:\\users\\sarat\\visual studio\\convertor_application\\convertor_application.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BB038B60-D50A-4B69-BA06-6AF134A7A899}|converter_application.csproj|solutionrelative:convertor_application.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +37,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-03T06:16:37.564Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-16T05:18:12.26Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -46,39 +83,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "converter_application",
-              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\converter_application.csproj",
-              "RelativeDocumentMoniker": "converter_application.csproj",
-              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\converter_application.csproj",
-              "RelativeToolTip": "converter_application.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-03T06:28:14.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-03T06:17:45.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-03T06:16:37.564Z",
-              "EditorCaption": ""
+              "Title": "PropertyPathWorker.cs",
+              "DocumentMoniker": "C:\\Users\\sarat\\AppData\\Local\\Temp\\.vsdbgsrc\\1b77cb146b3dc6f60ca3b7de619b68fc3904b4f03155b255fa425d7d7bd36ae9\\PropertyPathWorker.cs",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1b77cb146b3dc6f60ca3b7de619b68fc3904b4f03155b255fa425d7d7bd36ae9\\PropertyPathWorker.cs",
+              "ToolTip": "C:\\Users\\sarat\\AppData\\Local\\Temp\\.vsdbgsrc\\1b77cb146b3dc6f60ca3b7de619b68fc3904b4f03155b255fa425d7d7bd36ae9\\PropertyPathWorker.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1b77cb146b3dc6f60ca3b7de619b68fc3904b4f03155b255fa425d7d7bd36ae9\\PropertyPathWorker.cs [Read Only]",
+              "ViewState": "AgIAAJ0EAAAAAAAAAAAkwKoEAAAEAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T10:26:25.718Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
@@ -88,10 +102,45 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcEAAAAAAAAAAAAwM8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T06:16:33.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T06:16:33.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "convertor_application.csproj",
+              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\convertor_application.csproj",
+              "RelativeDocumentMoniker": "convertor_application.csproj",
+              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\convertor_application.csproj",
+              "RelativeToolTip": "convertor_application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-05T05:07:18.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InputDialog.cs",
+              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\InputDialog.cs",
+              "RelativeDocumentMoniker": "InputDialog.cs",
+              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\InputDialog.cs",
+              "RelativeToolTip": "InputDialog.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAgwDQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T05:05:24.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\sarat\\Visual Studio\\convertor_application\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T04:29:04.882Z"
             }
           ]
         }
